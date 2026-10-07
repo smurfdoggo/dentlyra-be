@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Admin;
 use App\Models\User;
 
 return [
@@ -38,6 +39,14 @@ return [
     */
 
     'guards' => [
+        'users-api' => [
+            'driver' => 'sanctum',
+            'provider' => 'users',
+        ],
+        'admins-api' => [
+            'driver' => 'sanctum',
+            'provider' => 'admins',
+        ],
         'web' => [
             'driver' => 'session',
             'provider' => 'users',
@@ -62,6 +71,10 @@ return [
     */
 
     'providers' => [
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => Admin::class,
+        ],
         'users' => [
             'driver' => 'eloquent',
             'model' => env('AUTH_MODEL', User::class),

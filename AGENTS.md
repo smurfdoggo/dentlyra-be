@@ -1,3 +1,11 @@
+# Authentication documentation
+
+- Read [AUTHENTICATION.md](AUTHENTICATION.md) before changing authentication behavior.
+- Whenever authentication is added, edited, or removed, update `AUTHENTICATION.md` in the same task. This includes admin/user authentication, routes, controllers, requests, resources, models, guards, tokens, migrations, account provisioning, validation, rate limits, configuration, and authentication tests.
+- Keep the documented API contract, examples, setup commands, file references, security behavior, and test instructions consistent with the implementation. Update the last-updated date and add a concise dated change-history entry for meaningful authentication changes.
+- This documentation maintenance is explicitly authorized by the user; do not ask for permission again. Do not report authentication work complete while its documentation is stale.
+- The documented `admin:create` provisioning command is intentionally interactive because it prompts for a hidden password. Its usage examples must omit `--no-interaction`; do not create an administrator account without user-provided provisioning details.
+
 <laravel-boost-guidelines>
 === foundation rules ===
 
